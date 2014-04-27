@@ -41,21 +41,26 @@ public:
       pinMode(_input, OUTPUT);
       pinMode(_power, OUTPUT);
       // Initial: We need to switch strobe off as soon it is possible to prevent TPH overheating.
-      digitalWrite(_latch, HIGH); // Inverted
-      digitalWrite(_strobe, HIGH); // Inverted
+      digitalWrite(_latch, LOW); // Inverted - inverted
+      digitalWrite(_strobe, LOW); // Inverted - inverted
       digitalWrite(_clock, LOW);
       digitalWrite(_input, LOW);
       digitalWrite(_power, LOW);
    }
-   void Burn(int expositionTime, byte mask[16]) // need 16 bytes
-   {
+   void Burn(int expositionTime, byte mask[16]){ // need 16 bytes
      digitalWrite(_power, HIGH);
-     delay(10);
-     for (int i = 0; i < 16; ++i)
-     {
-        for (int j = 0; j < 8; ++j)
-        {
-           uint8_t pinValue = bitRead(mask[i], j) != 0 ? HIGH : LOW;
+     delayMicroseconds(5);
+     for (int offset = 0; offset < 4; ++offset)
+       burnBlock(offset, mask, expositionTime);
+     digitalWrite(_input, LOW);
+     digitalWrite(_power, LOW);
+   }
+   
+private:
+   void burnBlock(int offset, byte mask[16], int expositionTime){
+     for (int i = 0; i < 16; ++i){
+        for (int j = offset; j < 8; j+=4){
+           const uint8_t pinValue = bitRead(mask[i], j) != 0 ? HIGH : LOW;
            digitalWrite(_input, pinValue);
            delayMicroseconds(10);
            digitalWrite(_clock, HIGH);
@@ -65,17 +70,19 @@ public:
         }
      }
      delayMicroseconds(10);
-     digitalWrite(_latch, LOW);
-     delayMicroseconds(10);
      digitalWrite(_latch, HIGH);
      delayMicroseconds(10);
+     digitalWrite(_latch, LOW);
+     delayMicroseconds(10);
+     burn(expositionTime);
+   }
+   
+   void burn(int expositionTime){
      noInterrupts();
-     digitalWrite(_strobe, LOW);
-     delay(expositionTime);
      digitalWrite(_strobe, HIGH);
+     delay(expositionTime);
+     digitalWrite(_strobe, LOW);
      interrupts();
-     digitalWrite(_input, LOW);
-     digitalWrite(_power, LOW);
    }
 };
 
@@ -130,16 +137,16 @@ void processStepper()
    Serial.println("DONE!");
 }
 
-void processPrint()
-{
+void processPrint1(){}
+
+void processPrint(){
    string = Serial.readStringUntil(' ');
    int fireTime = string.toInt();
    fireTime = constrain(fireTime, 1, 10);
 
    byte masks[16];
 
-   for (int i = 0; i < 16; ++i)
-   {
+   for (int i = 0; i < 16; ++i){
       string = Serial.readStringUntil(' ');
       masks[i] = string.toInt();
    }
