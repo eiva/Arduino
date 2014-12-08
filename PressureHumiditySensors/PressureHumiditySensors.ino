@@ -227,8 +227,9 @@ DHT dht(A0, DHT22,3);
 LiquidCrystal lcd(0, 1, 2, 3, 4, 5);
 
 Adafruit_BMP085 bmp;
-//const int analogInPin = A2;
-  
+
+HumidityMeasures humidityChart(10);
+ 
 void setup() {
   
   // set up the LCD's number of columns and rows: 
@@ -249,21 +250,33 @@ void loop() {
     float pressure = bmp.readPressure() * pas_to_mm;
     float humidity = dht.readHumidity();
 
-    lcd.clear();
+    if (humidityChart.Measure(humidity)){
+      // Recreate symbols
+      for (unsigned char i = 0; i < 8; ++i){
+        byte symbol[8];
+        humidityChart.FillSymbol(i, symbol);
+        lcd.createChar(i, symbol);
+      }
+    }
+
+    lcd.setCursor(0, 0);
     lcd.print("T=");
     lcd.print(temperature);
-    lcd.print("C");
-    lcd.setCursor(10, 0);    
-    //lcd.print("L=");
-    //lcd.print(lightness);
-    //lcd.print("%");
-    lcd.setCursor(0, 1);
+    lcd.print("C   ");
+
+    lcd.setCursor(8, 0);
     lcd.print("P=");
     lcd.print(pressure);
-    lcd.setCursor(10, 1);    
+
+    lcd.setCursor(0, 1);
     lcd.print("H=");
     lcd.print(humidity);
-    lcd.print("%");
+    lcd.print("%  ");
 
-   delay(500);
+    lcd.setCursor(8, 1);
+    for (unsigned char i = 0; i < 8; ++i){
+      lcd.write(i);
+    }
+
+   delay(100);
 }
