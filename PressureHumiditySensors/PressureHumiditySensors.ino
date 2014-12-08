@@ -160,7 +160,7 @@ class HumidityMeasures{
   unsigned char _chart[40];
   unsigned char _measure;
   unsigned char _maxMeasure;
-  unsigned double _mean;
+  double _mean;
 public:
   HumidityMeasures(unsigned char maxMeasure)
   : _maxMeasure(maxMeasure)
@@ -196,12 +196,20 @@ public:
     return shifted;
   }
   // Gets binary symbol for LCD.
-  byte[8] GetSymbol(unsigned char index){
-    byte result[8];
-    return result;
+  void FillSymbol(unsigned char index, byte charecterMask[8]) const{
+    for (unsigned char i = 0; i < 5; ++i){
+      for (unsigned char j = 0; j < 8; ++j){
+        if (j < _chart[index*5 + i]){
+          charecterMask[j] |= 1 << i;
+        }
+        else{
+          charecterMask[j] &= ~(1 << i);
+        }
+      }
+    }
   }
 private:
-  unsigned char convert(double val){
+  unsigned char convert(double val) const{
     return round(8.0 * val / 100.0);
   }
   void shift(){
