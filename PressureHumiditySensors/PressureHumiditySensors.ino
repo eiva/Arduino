@@ -175,6 +175,7 @@ public:
   bool Measure(double currentVal){
     bool shifted = false;
     if (_measure >= _maxMeasure){
+      _measure = 0;
       shift();
       shifted = true;
     }
@@ -195,15 +196,18 @@ public:
     }
     return shifted;
   }
+  double GetMean() const{
+    return _mean;
+  }
   // Gets binary symbol for LCD.
   void FillSymbol(unsigned char index, byte charecterMask[8]) const{
     for (unsigned char i = 0; i < 5; ++i){
       for (unsigned char j = 0; j < 8; ++j){
-        if (j < _chart[index*5 + i]){
-          charecterMask[j] |= 1 << i;
+        if (j < _chart[index*5 + 4-i]){
+          charecterMask[7-j] |= 1 << i;
         }
         else{
-          charecterMask[j] &= ~(1 << i);
+          charecterMask[7-j] &= ~(1 << i);
         }
       }
     }
@@ -213,7 +217,7 @@ private:
     return round(8.0 * val / 100.0);
   }
   void shift(){
-    for (unsigned char i = 38; i >= 0; --i){
+    for (char i = 38; i >= 0; --i){
       _chart[i+1] = _chart[i];
     }
     _chart[0] = 0;
@@ -228,7 +232,7 @@ LiquidCrystal lcd(0, 1, 2, 3, 4, 5);
 
 Adafruit_BMP085 bmp;
 
-HumidityMeasures humidityChart(10);
+HumidityMeasures humidityChart(90);
  
 void setup() {
   
@@ -242,7 +246,7 @@ void setup() {
   }
   dht.begin();
 }
-  
+
 void loop() {
     float t1 = bmp.readTemperature();
     float t2 = dht.readTemperature();
@@ -262,15 +266,17 @@ void loop() {
     lcd.setCursor(0, 0);
     lcd.print("T=");
     lcd.print(temperature);
+    lcd.setCursor(6, 0);
     lcd.print("C   ");
 
-    lcd.setCursor(8, 0);
+    lcd.setCursor(9, 0);
     lcd.print("P=");
     lcd.print(pressure);
 
     lcd.setCursor(0, 1);
     lcd.print("H=");
-    lcd.print(humidity);
+    lcd.print(humidityChart.GetMean());
+    lcd.setCursor(6, 1);
     lcd.print("%  ");
 
     lcd.setCursor(8, 1);
