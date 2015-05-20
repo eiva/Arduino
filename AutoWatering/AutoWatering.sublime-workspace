@@ -1,0 +1,447 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"On",
+				"OnEnter"
+			],
+			[
+				"TP",
+				"TPressLevel"
+			],
+			[
+				"is",
+				"isPressed"
+			],
+			[
+				"_i",
+				"_isUp"
+			],
+			[
+				"_s",
+				"_switchTime"
+			],
+			[
+				"_is",
+				"_isDown"
+			],
+			[
+				"_",
+				"_switchTime"
+			],
+			[
+				"digi",
+				"digitalWrite"
+			],
+			[
+				"bool",
+				"boolean"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"new",
+				"newPoint"
+			],
+			[
+				"shif",
+				"shifted"
+			],
+			[
+				"_me",
+				"_mean"
+			],
+			[
+				"cu",
+				"currentVal"
+			],
+			[
+				"sta",
+				"stabRoll"
+			],
+			[
+				"stab",
+				"stabYaw"
+			],
+			[
+				"_r",
+				"_rollLimit"
+			],
+			[
+				"_p",
+				"_pitchLimit"
+			],
+			[
+				"_yaw",
+				"_yawLimit"
+			],
+			[
+				"St",
+				"Stabilizer"
+			],
+			[
+				"Ra",
+				"RadioLink"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "AutoWatering.ino",
+			"settings":
+			{
+				"buffer_size": 4704,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Eugene/Documents/Arduino/AutoWatering",
+		"/C/Program Files (x86)/Arduino/libraries",
+		"/C/Program Files (x86)/Arduino/libraries/TFT",
+		"/C/Program Files (x86)/Arduino/libraries/TFT/examples",
+		"/C/Program Files (x86)/Arduino/libraries/TFT/examples/Arduino",
+		"/C/Program Files (x86)/Arduino/libraries/TFT/examples/Arduino/TFTDisplayText"
+	],
+	"file_history":
+	[
+		"/C/Users/Eugene/Documents/Arduino/AutoWatering/AutoWatering.sublime-project",
+		"/C/Users/Eugene/Desktop/UOTRACE.INI",
+		"/C/Users/Eugene/Desktop/DS18B20(Ardino)[V11]/DS18S20.ino",
+		"/C/Program Files (x86)/Arduino/libraries/Adafruit_NeoPixel/Adafruit_NeoPixel.h",
+		"/Z/GitHub/Quadro/RCControl/RcControlBoard/RcControlBoard.ino",
+		"/C/Program Files (x86)/Arduino/libraries/Mirf/Mirf.h",
+		"/D/SteamLibrary/SteamApps/common/Homeworld/HomeworldRM/Bin/Profiles/Profile1/Campaign/HOMEWORLDCLASSIC/persist3.lua",
+		"/C/Program Files (x86)/Arduino/libraries/Adafruit_NeoPixel/Adafruit_NeoPixel.cpp",
+		"/C/Users/Eugene/Desktop/TASK/TASK/Container.cs",
+		"/C/Users/Eugene/Desktop/TASK/TASK/MainWindow.xaml.cs",
+		"/C/Users/Eugene/Desktop/TASK/TASK/MainWindow.xaml",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/prefabs/carrot.lua",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/prefabs/silk.lua",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/prefabs/axe.lua",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/tuning_override.lua",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_Algorithms-master.zip/Algorithms-master/A4 8-Puzzle/Solver.java",
+		"/Z/Development/Prototypes/Tutorial/TestPlant/Scripts/npm.js",
+		"/Z/Development/Prototypes/Tutorial/TestPlant/DataBaseModel/Migrations/Configuration.cs",
+		"/Z/Development/Prototypes/Tutorial/Tutorial3Ajax/Scripts/coolstuff.js",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/tuning.lua",
+		"/D/SteamLibrary/SteamApps/common/Don't Starve Together Beta/data/scripts/prefabs/bunnyman.lua",
+		"/C/Users/Eugene/Downloads/Generate_PPM_signal_nodelay.ino",
+		"/D/#Development/TEFIS/trunk/TEFIS/TEFIS Manager.sln",
+		"/D/#Development/TEFIS/trunk/TEFIS/Data/TEFISDataBaseDataSet.cs",
+		"/D/#Development/TEFIS/trunk/TEFIS/Data/TEFISDataBaseDataSet.Designer.cs",
+		"/D/#Development/TEFIS/trunk/TEFIS/Data/TEFISDataBaseDataSet.xsc",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_percolation-testing.zip/percolation/PercolationVisualizer.java",
+		"/D/#Development/TEFIS/trunk/TEFIS/Data/TEFISDataBaseDataSet.xsd",
+		"/D/#Development/TEFIS/trunk/TEFIS/Data/DataSet1.xsd",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_percolation-testing.zip/percolation/InteractivePercolationVisualizer.java",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_Generate_PPM_signal_V0.2.zip/Generate_PPM_signal_nodelay/Generate_PPM_signal_nodelay.ino",
+		"/C/Users/Eugene/Documents/Arduino/PressureHumiditySensors/PressureHumiditySensors.ino",
+		"/Z/px4/Bootloader/main_f4.c",
+		"/Z/px4/Bootloader/bl.c",
+		"/Z/px4/Firmware/NuttX/apps/examples/elf/elf_main.c",
+		"/Z/GitHub/ArduinoPrinter/Arduino/Test/Test.ino",
+		"/C/Users/Eugene/Desktop/Mirf/examples/ping_client/ping_client.pde",
+		"/Z/GitHub/Quadro/RCControl/FlightController/Motors.h",
+		"/C/Program Files (x86)/Arduino/libraries/Servo/Servo.cpp",
+		"/C/Program Files (x86)/Arduino/libraries/Stepper/Stepper.cpp",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_FATFS-DBG_Keil.zip/FATFS-DBG/diskio.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_FATFS-DBG_Keil.zip/FATFS-DBG/stm32f4_discovery_sdio_sd.c",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zO33F0.tmp/__Lib_FAT32.h",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zO74C0.tmp/sdio_sd.c",
+		"/Z/GitHub/Quadro/Tests/TestSDIO/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_madgwick_algorithm_c.zip/MadgwickAHRS/MadgwickAHRS.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_madgwick_algorithm_c.zip/MadgwickAHRS/MadgwickAHRS.c",
+		"/Z/GitHub/Quadro/FlightController/testnrf.cpp",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_madgwick_algorithm_c.zip/MahonyAHRS/MahonyAHRS.c",
+		"/Z/GitHub/Quadro/Tests/TestFC/main.cpp",
+		"/Z/GitHub/Quadro/Tests/USART/main.c",
+		"/C/Users/Eugene/SkyDrive/Development/Quadrotor/TK_Quad32bit_SlidingPID_V2/ahrs_tinsam3x8e.h",
+		"/C/Users/Eugene/SkyDrive/Development/Quadrotor/TK_Quad32bit_SlidingPID_V2/configsam3x8e.h",
+		"/C/Users/Eugene/SkyDrive/Development/Quadrotor/TK_Quad32bit_SlidingPID_V2/Control_SlidingPIDsam3x8e.h",
+		"/Z/GitHub/Quadro/FlightController/FlightController.coproj",
+		"/Z/GitHub/Quadro/FlightController/syscalls/syscalls.c",
+		"/Z/GitHub/Quadro/FlightController/arm-gcc-link.ld",
+		"/C/Games/Mass Effect 2/BioGame/Config/PC/Cooked/Coalesced.ini",
+		"/Z/px4/eclipse/eclipse.ini",
+		"/Z/GitHub/Quadro/QubeQuad/Src/freertos.c",
+		"/Z/GitHub/Quadro/QubeQuad/Src/sdio.c",
+		"/Z/GitHub/Quadro/QubeQuad/Src/main.c",
+		"/Z/GitHub/Quadro/QubeQuad/Projects/TrueSTUDIO/Quadro Configuration/STM32F407VG_FLASH.ld",
+		"/C/Users/Eugene/Desktop/sketch_mar20d_16x2lcd_temperaturewithgraph_v2.pde",
+		"/C/Program Files (x86)/Arduino/libraries/Servo/Servo.h",
+		"/C/Program Files (x86)/Arduino/libraries/Humidity_Temperature_Sensor/DHT.h",
+		"/Z/GitHub/Quadro/QubeQuad/Src/bsp_driver_sd.c",
+		"/Z/GitHub/Quadro/QubeQuad/Src/gpio.c",
+		"/Z/GitHub/Quadro/QubeQuad/Src/spi.c",
+		"/Z/GitHub/Quadro/QubeQuad/Src/tim.c",
+		"/C/Program Files (x86)/Arduino/libraries/Humidity_Temperature_Sensor/DHT.cpp",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm32066.zip/STM32F4xx_AN3969_V1.0.0/Project/STM32F4xx_EEPROM_Emulation/src/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stm32f4_fpu_julia.zip/STM32F4xx_AN4044_FW_V1.0.1/Projects/STM32F4xx_Fractal/src/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stm32f4_fpu_julia.zip/STM32F4xx_AN4044_FW_V1.0.1/Projects/STM32F4xx_Fractal/src/stm32f4xx_julia_fpu.c",
+		"/Z/GitHub/Quadro/FlightController/main.cpp",
+		"/Z/GitHub/Quadro/Tests/TestSPI/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_FATFS-DBG_Keil.zip/FATFS-DBG/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_FATFS-DBG_Keil.zip/FATFS-DBG/stm32f4_discovery.c",
+		"/Z/GitHub/Quadro/Tests/TestSDIO/TestSDIO.coproj",
+		"/Z/GitHub/Quadro/RCControl/FlightController/Controller.h",
+		"/Z/GitHub/Quadro/ControlBoard/semihosting/semihosting.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm32066.zip/STM32F4xx_AN3969_V1.0.0/Project/STM32F4xx_EEPROM_Emulation/src/eeprom.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm32066.zip/STM32F4xx_AN3969_V1.0.0/Project/STM32F4xx_EEPROM_Emulation/inc/stm32f4xx_conf.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_c_library-4cd384001b5373e1ecaa6c4cd66994855cec4742.zip/c_library-4cd384001b5373e1ecaa6c4cd66994855cec4742/protocol.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_my_proj.zip/my_audio_usb/main.c",
+		"/Z/GitHub/Quadro/FlightController/TestOS.coproj",
+		"/Z/GitHub/Quadro/FlightController/Utils.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/main.c",
+		"/Z/GitHub/Quadro/FlightController/Motors.h",
+		"/Z/GitHub/Quadro/FlightController/Utils.c",
+		"/Z/GitHub/Quadro/Tests/TestOS/TestOS.coproj",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/include/sdio_sd.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/source/sdio_sd.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_madgwick_algorithm_c.zip/MahonyAHRS/MahonyAHRS.h",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zOA412.tmp/SDIO Fat32.c",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zEFAFD.tmp/SDIO Fat32.asm",
+		"/C/Users/Eugene/SkyDrive/Development/STM32/SDIO/ff.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_ff10b.zip/src/ffconf.h",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zO1C5D.tmp/tm_stm32f4_spi.h",
+		"/C/Users/Eugene/SkyDrive/Development/STM32/SDIO/main.c",
+		"/C/Users/Eugene/Desktop/STM32Cube_FW_F4_V1.3.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c",
+		"/C/Users/Eugene/Desktop/STM32Cube_FW_F4_V1.3.0/Drivers/CMSIS/RTOS/cmsis_os.h",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zO52A2.tmp/tm_stm32f4_spi.c",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zEF1B2.tmp/tm_stm32f4_spi.h",
+		"/C/Users/Eugene/AppData/Local/Temp/LBKTemp_7zip/7zE337.tmp/tm_stm32f4_spi.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/sdio_sd.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/ffconf.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/diskio.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/diskio.c",
+		"/Z/GitHub/Quadro/Tests/TestOS/fatfs_lib/xprintf.h",
+		"/Z/GitHub/Quadro/Tests/TestOS/freertos/source/portmacro.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/hal/src/radiolink.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/drivers/src/nvic.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/drivers/src/nrf24l01.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/hal/src/eskylink.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/hal/interface/eskylink.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/hal/interface/radiolink.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_crazyflie-firmware-master (1).zip/crazyflie-firmware-master/drivers/src/exti.c",
+		"/C/Users/Eugene/Desktop/STM32Cube_FW_F4_V1.3.0/Drivers/BSP/Components/Common/accelero.h",
+		"/C/Users/Eugene/Desktop/STM32Cube_FW_F4_V1.3.0/Drivers/BSP/STM32F4-Discovery/stm32f4_discovery_accelerometer.c",
+		"/C/Users/Eugene/Desktop/STM32Cube_FW_F4_V1.3.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp2_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_adc.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Projects/Virtual_COM_Port/src/main.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Projects/Virtual_COM_Port/src/usb_endp.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Projects/Virtual_COM_Port/src/hw_config.c",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_sd.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_flash.h",
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_flash.c"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"calories_per_day",
+			"jump_to_app",
+			"createpoint",
+			"TestOs",
+			"SDEnWideBus",
+			"FindSCR",
+			"SD_EnableWideBusOperation",
+			"SDEnWideBus",
+			"SD_CHECK_PATTERN",
+			"SD_LowLevel_Init",
+			"DMA",
+			"SD_PowerON",
+			"SD_CMD_GO_IDLE_STATE",
+			"SDIO_INIT_CLK_DIV",
+			"CmdError",
+			"SD_PowerON",
+			"nrfIsr",
+			"nrfSetInterruptCallback",
+			"kP"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "AutoWatering.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2143,
+								2143
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1611.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "AutoWatering.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 226.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
