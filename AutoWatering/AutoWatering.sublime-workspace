@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"GetM",
+				"GetMinWateringInterval"
+			],
+			[
+				"Get",
+				"GetMoistureStopTrigger"
+			],
+			[
+				"G",
+				"GetValue"
+			],
+			[
+				"M",
+				"MoistureSensor"
+			],
+			[
+				"Ge",
+				"GetMaxWateringTime"
+			],
+			[
+				"Se",
+				"Settings"
+			],
+			[
+				"OnE",
+				"OnExit"
+			],
+			[
+				"The",
+				"TheApp"
+			],
+			[
+				"_c",
+				"_controlState"
+			],
+			[
+				"_",
+				"_wateringState"
+			],
+			[
 				"On",
 				"OnEnter"
 			],
@@ -26,10 +66,6 @@
 			[
 				"_is",
 				"_isDown"
-			],
-			[
-				"_",
-				"_switchTime"
 			],
 			[
 				"digi",
@@ -95,7 +131,7 @@
 			"file": "AutoWatering.ino",
 			"settings":
 			{
-				"buffer_size": 4704,
+				"buffer_size": 7847,
 				"line_ending": "Unix"
 			}
 		}
@@ -335,15 +371,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4704,
+						"buffer_size": 7847,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2143,
-								2143
+								5985,
+								5985
 							]
 						],
 						"settings":
@@ -353,7 +389,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1611.0,
+						"translation.y": 639.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

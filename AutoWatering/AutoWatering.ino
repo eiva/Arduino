@@ -114,7 +114,7 @@ public:
 };
 
 
-class Settings
+class SettingsContainer
 {
 public:
   int GetMinWateringTime() const { return 2000; }
@@ -139,11 +139,13 @@ public:
 class Application
 {
   State* _current;
+
+  State *_controlState;
+  State *_wateringState;
+  State *_settingsState;
+
 public:
-  Application(State* initial)
-  {
-    _current = initial;
-  }
+  Application();
 
   void Update()
   {
@@ -160,111 +162,136 @@ public:
       _current = newState;
     }
   }
+
+  State *GetControlState() const { return _controlState; }
+  State *GetWateringState() const { return _wateringState; }
+  State *GetSettingsState() const { return _settingsState; }
 public:
   AnalogSensor<A1> MoistureSensor;
   Button<6> LButton;
   Button<7> CButton;
   Button<8> RButton;
-  Settings Settings;
+  LiquidCrystal lcd;
+  DigitalOut<A2> Pump;
+  SettingsContainer Settings;
 };
 
 Application* TheApp;
 
-
-
-class ControlState : public State
+class TimedState : public State
 {
-  long _enterTime;
+private:
+  long _enteringTime;
+  long _previousLeaveTime;
 public:
-  ControlState () : _enterTime(0)
+  TimedState() : _enteringTime(0), _previousLeaveTime(0) { }
+  virtual void OnEnter()
+  {
+    _enteringTime = millis();
+  }
+  virtual void OnExit()
+  {
+    _previousLeaveTime = millis();
+  }
+protected:
+  // Gets duration since entering the state.
+  long GetDuration() const { return millis() - _enteringTime; }
+};
+
+class ControlState : public TimedState
+{
+public:
+  ControlState ()
   {
 
   }
   virtual State* Update()
   {
-    // TODO: !!!
-    //    if (TheApp->MoistureSensor.GetValue() > 2 )
+    TheApp->lcd.setCursor(0, 0);
+    TheApp->lcd.print("Control: ");
+    TheApp->lcd.print(TheApp->MoistureSensor.GetValue());
+    TheApp->lcd.setCursor(0, 1);
+    TheApp->lcd.print("Last: ");
+    TheApp->lcd.setCursor(8, 1);
+    TheApp->lcd.print(GetDuration() / 1000 / 60);
+        
+    if (TheApp->MoistureSensor.GetValue() >= TheApp->Settings.GetMoistureStartTrigger() )
+      if (GetDuration() > TheApp->Settings.GetMinWateringInterval())
+        return TheApp->GetWateringState();
+
+    if (TheApp->CButton.CheckPressedAndReset())
+      return TheApp->GetSettingsState();
+
     return this;
   }
 };
 
+class WateringState : public TimedState
+{
+public:
+  virtual State* Update()
+  {
+    TheApp->lcd.setCursor(0, 0);
+    TheApp->lcd.print("!!Pump Active!!");
+    TheApp->lcd.setCursor(0, 1);
+    TheApp->lcd.print(TheApp->MoistureSensor.GetValue());
+    TheApp->lcd.print("   ");
+    TheApp->lcd.setCursor(8, 1);
+    TheApp->lcd.print(TheApp->Settings.GetMoistureStopTrigger());
+    TheApp->lcd.print("   ");
 
+    if (GetDuration() >= TheApp->Settings.GetMaxWateringTime())
+      return TheApp->GetControlState();
 
+    if(TheApp->LButton.CheckPressedAndReset() || TheApp->CButton.CheckPressedAndReset() || TheApp->RButton.CheckPressedAndReset())
+      return TheApp->GetControlState();
 
+    if (GetDuration() <= TheApp->Settings.GetMinWateringInterval())
+      return this;
 
+    if (TheApp->MoistureSensor.GetValue() <= TheApp->Settings.GetMoistureStopTrigger())
+      return TheApp->GetControlState();
+  }
+  virtual void OnEnter()
+  {
+    TimedState::OnEnter();
+    TheApp->Pump.Set(true);
+  }
+  virtual void OnExit()
+  {
+    TheApp->Pump.Set(false);
+    TimedState::OnExit();
+  }
+};
 
+class SettingsMainPageState : public State
+{
+   virtual State* Update()
+  {
+    TheApp->lcd.setCursor(0, 0);
+    TheApp->lcd.print("ABCDEF         S");
+    TheApp->lcd.setCursor(0, 1);
+    TheApp->lcd.print("StartValue");
 
+    return this;
+  }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(9, 11, 2, 3, 4, 5);
-const int sensorPin = A1;    // select the input pin for the potentiometer
-const int sensetivityPin = A2;    // select the input pin for the potentiometer
-const int pumpPin = 13;
-
-const int lButtonPin = 7;
-const int cButtonPin = 7;
-const int rButtonPin = 6;
-int waterMin = 1024, waterMax = 0;
-long lastPumpTime = 0;
-const int minPumpDelta = 1000;
-const int maxPumpWorkingTime = 2000;
-boolean pumpState = false;
+inline Application::Application() : 
+  lcd(9, 11, 2, 3, 4, 5)
+{
+  lcd.begin(16, 2);
+  _wateringState = new WateringState();
+  _controlState = new ControlState();
+  _settingsState = new SettingsMainPageState();
+  _current = _controlState;
+}
 
 void setup() {
-  pinMode(pumpPin, OUTPUT);
-  digitalWrite(pumpPin, LOW);
-  // set up the LCD's number of columns and rows: 
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  lcd.print("hello, world!");
+  TheApp = new Application();
 }
 
 void loop() {
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  long currentTime = millis();
-  if (!pumpState){
-    if (currentTime - lastPumpTime > minPumpDelta){
-      digitalWrite(pumpPin, HIGH);
-      lastPumpTime = currentTime;
-      pumpState = true;
-    }
-  }else{
-    if (currentTime - lastPumpTime  > maxPumpWorkingTime){
-      digitalWrite(pumpPin, LOW);
-      lastPumpTime = currentTime;
-      pumpState = false;
-    }
-  }
-    
-  
-  // print the number of seconds since reset:
-  int waterSensor = analogRead(sensorPin);
-  waterMin = min( waterSensor, waterMin);
-  waterMax = max( waterSensor, waterMax);
-  lcd.setCursor(0, 0);
-  lcd.print(waterSensor);
-  lcd.print("     ");
-  lcd.setCursor(0, 1);
-  lcd.print(waterMin);
-  lcd.print("  ");
-  lcd.setCursor(8, 1);
-  lcd.print(waterMax);
-  lcd.print("  ");
+  TheApp->Update();
 }
 
