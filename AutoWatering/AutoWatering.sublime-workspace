@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"GetSt",
+				"GetMoistureStartTrigger"
+			],
+			[
+				"Sett",
+				"SettingsContainer"
+			],
+			[
+				"OnE",
+				"OnEnter"
+			],
+			[
+				"_c",
+				"_current"
+			],
+			[
 				"GetM",
 				"GetMinWateringInterval"
 			],
@@ -28,16 +44,8 @@
 				"Settings"
 			],
 			[
-				"OnE",
-				"OnExit"
-			],
-			[
 				"The",
 				"TheApp"
-			],
-			[
-				"_c",
-				"_controlState"
 			],
 			[
 				"_",
@@ -131,7 +139,7 @@
 			"file": "AutoWatering.ino",
 			"settings":
 			{
-				"buffer_size": 7847,
+				"buffer_size": 8155,
 				"line_ending": "Unix"
 			}
 		}
@@ -181,8 +189,8 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Eugene/Documents/Arduino/AutoWatering/AutoWatering.sublime-project",
 		"/C/Users/Eugene/Desktop/UOTRACE.INI",
+		"/C/Users/Eugene/Documents/Arduino/AutoWatering/AutoWatering.sublime-project",
 		"/C/Users/Eugene/Desktop/DS18B20(Ardino)[V11]/DS18S20.ino",
 		"/C/Program Files (x86)/Arduino/libraries/Adafruit_NeoPixel/Adafruit_NeoPixel.h",
 		"/Z/GitHub/Quadro/RCControl/RcControlBoard/RcControlBoard.ino",
@@ -371,15 +379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7847,
+						"buffer_size": 8155,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5985,
-								5985
+								6984,
+								6984
 							]
 						],
 						"settings":
@@ -389,7 +397,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 639.0,
+						"translation.y": 5251.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

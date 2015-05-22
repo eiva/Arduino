@@ -118,13 +118,23 @@ class SettingsContainer
 {
 public:
   int GetMinWateringTime() const { return 2000; }
-  int GetMaxWateringTime() const { return 5000; }
-  int GetMoistureStartTrigger() const { return 900; } // Maximum allowed resistance of sensor to start watering.
-  int GetMoistureStopTrigger() const { return 2000; }
-  int GetMinWateringInterval() const { return 20000; }
-  int GetMutetModeLightingSensor() const { return 500; } // Resistance of light sensor exciding which whatering is forbidden.
-};
+  void SetMinWateringTime(const int& val){  }
 
+  int GetMaxWateringTime() const { return 5000; }
+  void SetMaxWateringTime(const int& val){  }
+
+  int GetMoistureStartTrigger() const { return 900; } // Maximum allowed resistance of sensor to start watering.
+  void SetMoistureStartTrigger(const int& val){  }
+
+  int GetMoistureStopTrigger() const { return 2000; }
+  void SetMoistureStopTrigger(const int& val){  }
+
+  int GetMinWateringInterval() const { return 20000; }
+  void SetMinWateringInterval(const int& val){  }
+
+  int GetMutetModeLightingSensor() const { return 500; } // Resistance of light sensor exciding which whatering is forbidden.
+  void SetMutetModeLightingSensor(const int& val){  }
+};
 
 class State
 {
@@ -264,26 +274,130 @@ public:
   }
 };
 
+class SettingsPageBase : public State
+{
+public:
+  virtual const char * GetMessage() const = 0;
+};
+
+template <const char* TMessage, typename T, T TMin, T TMax, T TStep, T (SettingsContainer::*TGetter)() const, void (SettingsContainer::*TSetter)(const T&)>
+class NumberSettingPage : public SettingsPageBase
+{
+  long _lastActionTime;
+  T _current;
+public:
+
+  virtual State* Update()
+  {
+    TheApp->lcd.setCursor(0, 0);
+    TheApp->lcd.print(TMessage);
+    TheApp->lcd.setCursor(0, 1);
+    TheApp->lcd.print(_current);
+    TheApp->lcd.print("   ");
+
+    if (TheApp->CButton.CheckPressedAndReset()) return TheApp->GetSettingsState();
+    else if (TheApp->LButton.CheckPressedAndReset())
+    { 
+      _current -= TStep;
+      if (_current < TMin) _current = TMin;
+    }
+    else if (TheApp->RButton.CheckPressedAndReset())
+    { 
+      _current += TStep;
+      if (_current > TMax) _current = TMax;
+    }
+  }
+
+  virtual void OnEnter()
+  {
+    _current = (TheApp->Settings.*TGetter)();
+  }
+
+  virtual void OnExit()
+  {
+    (TheApp->Settings.*TSetter)(_current);
+  }
+
+  virtual const char * GetMessage() const
+  {
+    return TMessage;
+  }
+};
+
+char StartThresholdName[] = "Start Moisture  ";
+char StopThresholdName[]  = "Stop Moisture  ";
+
 class SettingsMainPageState : public State
 {
-   virtual State* Update()
+  SettingsPageBase** _settings;
+  int _maxSettings;
+  int _currentSelection;
+
+public:
+
+  SettingsMainPageState()
+  {
+    _maxSettings = 2;
+    _settings = new SettingsPageBase*[_maxSettings];
+
+    _settings[0] = new NumberSettingPage<StartThresholdName, int, 0, 1023, 4, &SettingsContainer::GetMoistureStartTrigger, &SettingsContainer::SetMoistureStartTrigger>();
+    _settings[1] = new NumberSettingPage<StopThresholdName,  int, 0, 1023, 4, &SettingsContainer::GetMoistureStopTrigger, &SettingsContainer::SetMoistureStopTrigger>();
+  }
+
+  virtual State* Update()
   {
     TheApp->lcd.setCursor(0, 0);
     TheApp->lcd.print("ABCDEF         S");
+    
     TheApp->lcd.setCursor(0, 1);
-    TheApp->lcd.print("StartValue");
+
+    if (_currentSelection >= 0 && _currentSelection < _maxSettings)
+    {
+      TheApp->lcd.print(_settings[_currentSelection]->GetMessage());
+      if (TheApp->CButton.CheckPressedAndReset()) return _settings[_currentSelection];
+      TheApp->lcd.setCursor(_currentSelection, 0);
+
+    }
+    else
+    {
+      TheApp->lcd.print("Save          ");
+      // TODO: Call Save to EEProm
+      if (TheApp->CButton.CheckPressedAndReset()) return TheApp->GetControlState();
+      TheApp->lcd.setCursor(15, 0);
+    }
+
+    if (TheApp->LButton.CheckPressedAndReset())
+    {
+      --_currentSelection;
+      if (_currentSelection < 0) _currentSelection = _maxSettings;
+    }
+    else if (TheApp->RButton.CheckPressedAndReset())
+    {
+      ++_currentSelection;
+      if (_currentSelection > _maxSettings) _currentSelection = 0; 
+    }
 
     return this;
+  }
+  virtual void OnEnter()
+  {
+    _currentSelection = 0;
+    TheApp->lcd.blink();
+  }
+
+  virtual void OnExit()
+  {
+    TheApp->lcd.noBlink();
   }
 };
 
 inline Application::Application() : 
+  _wateringState(new WateringState()),
+  _controlState (new ControlState()),
+  _settingsState(new SettingsMainPageState()),
   lcd(9, 11, 2, 3, 4, 5)
 {
   lcd.begin(16, 2);
-  _wateringState = new WateringState();
-  _controlState = new ControlState();
-  _settingsState = new SettingsMainPageState();
   _current = _controlState;
 }
 
