@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"Ge",
+				"GetControlState"
+			],
+			[
+				"Get",
+				"GetMessage"
+			],
+			[
+				"_cu",
+				"_currentSelection"
+			],
+			[
+				"_c",
+				"_currentSelection"
+			],
+			[
 				"GetSt",
 				"GetMoistureStartTrigger"
 			],
@@ -16,16 +32,8 @@
 				"OnEnter"
 			],
 			[
-				"_c",
-				"_current"
-			],
-			[
 				"GetM",
 				"GetMinWateringInterval"
-			],
-			[
-				"Get",
-				"GetMoistureStopTrigger"
 			],
 			[
 				"G",
@@ -34,10 +42,6 @@
 			[
 				"M",
 				"MoistureSensor"
-			],
-			[
-				"Ge",
-				"GetMaxWateringTime"
 			],
 			[
 				"Se",
@@ -139,7 +143,7 @@
 			"file": "AutoWatering.ino",
 			"settings":
 			{
-				"buffer_size": 8155,
+				"buffer_size": 14321,
 				"line_ending": "Unix"
 			}
 		}
@@ -190,6 +194,7 @@
 	"file_history":
 	[
 		"/C/Users/Eugene/Desktop/UOTRACE.INI",
+		"/C/Users/Eugene/Documents/Arduino/AutoWatering/AutoWatering.ino",
 		"/C/Users/Eugene/Documents/Arduino/AutoWatering/AutoWatering.sublime-project",
 		"/C/Users/Eugene/Desktop/DS18B20(Ardino)[V11]/DS18S20.ino",
 		"/C/Program Files (x86)/Arduino/libraries/Adafruit_NeoPixel/Adafruit_NeoPixel.h",
@@ -315,8 +320,7 @@
 		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Projects/Virtual_COM_Port/src/usb_endp.c",
 		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Projects/Virtual_COM_Port/src/hw_config.c",
 		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_sd.h",
-		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_flash.h",
-		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_flash.c"
+		"/C/Users/Eugene/AppData/Local/Temp/Temp1_stsw-stm320811.zip/STM32_USB-FS-Device_Lib_V4.0.0/Utilities/STM32_EVAL/STM3210B_EVAL/stm3210b_eval_spi_flash.h"
 	],
 	"find":
 	{
@@ -379,15 +383,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8155,
+						"buffer_size": 14321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6984,
-								6984
+								7949,
+								7949
 							]
 						],
 						"settings":
@@ -397,7 +401,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5251.0,
+						"translation.y": 3311.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
